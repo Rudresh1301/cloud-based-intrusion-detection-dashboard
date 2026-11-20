@@ -1,0 +1,118 @@
+timestamp,source_ip,username,event_type,status,endpoint
+2026-11-20 00:05:12,192.168.1.10,alice,login,success,/login
+2026-11-20 00:08:24,192.168.1.10,alice,page_view,success,/dashboard
+2026-11-20 00:15:33,192.168.1.15,bob,login,success,/login
+2026-11-20 00:20:41,192.168.1.15,bob,api_query,success,/api/v1/metrics
+2026-11-20 01:02:19,10.0.0.45,charlie,login,success,/login
+2026-11-20 01:14:02,10.0.0.45,charlie,download,success,/files/monthly_report.pdf
+2026-11-20 01:45:11,192.168.1.105,root,login,failed,/login
+2026-11-20 01:45:15,192.168.1.105,admin,login,failed,/login
+2026-11-20 01:45:19,192.168.1.105,administrator,login,failed,/login
+2026-11-20 01:45:24,192.168.1.105,user,login,failed,/login
+2026-11-20 01:45:28,192.168.1.105,test,login,failed,/login
+2026-11-20 01:45:32,192.168.1.105,guest,login,failed,/login
+2026-11-20 01:45:36,192.168.1.105,oracle,login,failed,/login
+2026-11-20 01:45:40,192.168.1.105,postgres,login,failed,/login
+2026-11-20 01:45:44,192.168.1.105,manager,login,failed,/login
+2026-11-20 01:45:48,192.168.1.105,support,login,failed,/login
+2026-11-20 01:45:52,192.168.1.105,sysadmin,login,failed,/login
+2026-11-20 01:45:57,192.168.1.105,backup,login,failed,/login
+2026-11-20 02:10:04,192.168.1.22,diana,login,success,/login
+2026-11-20 02:15:30,192.168.1.22,diana,api_query,success,/api/v1/users
+2026-11-20 02:30:15,103.21.45.67,unknown,SQL Injection attempt,blocked,"/search?query=1' UNION SELECT username,password FROM users--"
+2026-11-20 02:31:02,103.21.45.67,unknown,SQL Injection attempt,blocked,/catalog?id=105 OR 1=1
+2026-11-20 02:31:45,103.21.45.67,unknown,SQL Injection attempt,blocked,/login?user=admin'--
+2026-11-20 02:32:19,103.21.45.67,unknown,SQL Injection attempt,blocked,/api/item?name=test' AND 1=1/*
+2026-11-20 03:00:10,192.168.1.10,alice,page_view,success,/profile
+2026-11-20 03:12:44,172.16.0.23,anonymous,unusual_probe,blocked,/admin/config.php
+2026-11-20 03:13:01,172.16.0.23,anonymous,unusual_probe,blocked,/wp-admin
+2026-11-20 03:13:22,172.16.0.23,anonymous,unusual_probe,blocked,/phpmyadmin
+2026-11-20 03:13:45,172.16.0.23,anonymous,unusual_probe,denied,/.env
+2026-11-20 03:14:10,172.16.0.23,anonymous,unusual_probe,denied,/server-status
+2026-11-20 03:40:00,192.168.1.30,frank,login,success,/login
+2026-11-20 03:42:12,192.168.1.30,frank,page_view,success,/dashboard
+2026-11-20 04:05:19,91.203.12.78,guest,XSS attempt,blocked,/comment?msg=<script>alert('XSS')</script>
+2026-11-20 04:06:01,91.203.12.78,guest,XSS attempt,blocked,/search?q=<img src=x onerror=document.cookie>
+2026-11-20 04:06:45,91.203.12.78,guest,XSS attempt,blocked,"/profile/update?bio=<iframe src=""javascript:alert(1)"">"
+2026-11-20 04:30:11,185.220.101.33,unknown,path_traversal,blocked,/download?file=../../../../etc/passwd
+2026-11-20 04:30:35,185.220.101.33,unknown,path_traversal,blocked,/view?doc=..%2f..%2f..%2fconfig.json
+2026-11-20 04:31:12,185.220.101.33,unknown,path_traversal,blocked,/files/..\\..\\windows\\win.ini
+2026-11-20 04:45:00,185.220.101.33,unknown,command_injection,blocked,/tools/ping?host=127.0.0.1; cat /etc/passwd
+2026-11-20 04:45:22,185.220.101.33,unknown,command_injection,blocked,/tools/dns?domain=test.com && whoami
+2026-11-20 04:45:50,185.220.101.33,unknown,command_injection,blocked,/api/exec?cmd=`id`
+2026-11-20 05:00:15,45.77.89.12,scanner,page_view,success,/
+2026-11-20 05:00:16,45.77.89.12,scanner,page_view,success,/about
+2026-11-20 05:00:17,45.77.89.12,scanner,page_view,success,/services
+2026-11-20 05:00:18,45.77.89.12,scanner,page_view,success,/contact
+2026-11-20 05:00:19,45.77.89.12,scanner,page_view,success,/blog
+2026-11-20 05:00:20,45.77.89.12,scanner,page_view,success,/products
+2026-11-20 05:00:21,45.77.89.12,scanner,page_view,success,/faq
+2026-11-20 05:00:22,45.77.89.12,scanner,page_view,success,/help
+2026-11-20 05:00:23,45.77.89.12,scanner,page_view,success,/terms
+2026-11-20 05:00:24,45.77.89.12,scanner,page_view,success,/privacy
+2026-11-20 05:00:25,45.77.89.12,scanner,page_view,success,/pricing
+2026-11-20 05:00:26,45.77.89.12,scanner,page_view,success,/status
+2026-11-20 05:00:27,45.77.89.12,scanner,page_view,success,/docs
+2026-11-20 05:00:28,45.77.89.12,scanner,page_view,success,/api
+2026-11-20 05:00:29,45.77.89.12,scanner,page_view,success,/login
+2026-11-20 05:00:30,45.77.89.12,scanner,page_view,success,/register
+2026-11-20 05:00:31,45.77.89.12,scanner,page_view,success,/search
+2026-11-20 05:00:32,45.77.89.12,scanner,page_view,success,/sitemap.xml
+2026-11-20 05:00:33,45.77.89.12,scanner,page_view,success,/robots.txt
+2026-11-20 05:00:34,45.77.89.12,scanner,page_view,success,/assets/main.css
+2026-11-20 05:00:35,45.77.89.12,scanner,page_view,success,/assets/app.js
+2026-11-20 05:00:36,45.77.89.12,scanner,page_view,success,/assets/logo.png
+2026-11-20 05:00:37,45.77.89.12,scanner,page_view,success,/catalog/all
+2026-11-20 05:00:38,45.77.89.12,scanner,page_view,success,/feed
+2026-11-20 05:00:39,45.77.89.12,scanner,page_view,success,/rss
+2026-11-20 05:00:40,45.77.89.12,scanner,page_view,success,/search?q=test
+2026-11-20 05:00:41,45.77.89.12,scanner,page_view,success,/archive
+2026-11-20 06:12:00,192.168.1.10,alice,login,success,/login
+2026-11-20 06:15:22,192.168.1.10,alice,api_query,success,/api/v1/summary
+2026-11-20 07:05:10,192.168.1.15,bob,login,success,/login
+2026-11-20 07:22:44,192.168.1.15,bob,download,success,/files/report_q3.pdf
+2026-11-20 08:00:01,10.0.0.45,charlie,login,success,/login
+2026-11-20 08:15:33,10.0.0.45,charlie,api_query,success,/api/v1/data
+2026-11-20 08:30:19,192.168.1.22,diana,login,success,/login
+2026-11-20 08:45:02,192.168.1.22,diana,page_view,success,/dashboard
+2026-11-20 09:00:15,192.168.1.30,frank,login,success,/login
+2026-11-20 09:10:44,192.168.1.30,frank,page_view,success,/settings
+2026-11-20 09:30:12,192.168.1.105,admin,login,failed,/login
+2026-11-20 09:30:16,192.168.1.105,admin,login,failed,/login
+2026-11-20 09:30:20,192.168.1.105,admin,login,failed,/login
+2026-11-20 09:30:24,192.168.1.105,admin,login,failed,/login
+2026-11-20 09:30:28,192.168.1.105,admin,login,failed,/login
+2026-11-20 10:14:02,192.168.1.10,alice,logout,success,/logout
+2026-11-20 10:20:11,103.21.45.67,unknown,SQL Injection attempt,blocked,"/products?category=books' UNION ALL SELECT null,password,email FROM admin--"
+2026-11-20 10:21:05,103.21.45.67,unknown,SQL Injection attempt,blocked,/api/users/1; DROP TABLE logs;--
+2026-11-20 11:00:19,10.0.0.88,grace,login,success,/login
+2026-11-20 11:05:44,10.0.0.88,grace,page_view,success,/dashboard
+2026-11-20 11:30:00,10.0.0.88,grace,api_query,success,/api/v1/metrics
+2026-11-20 12:00:15,192.168.1.15,bob,page_view,success,/dashboard
+2026-11-20 12:15:30,192.168.1.15,bob,logout,success,/logout
+2026-11-20 13:00:22,192.168.1.22,diana,page_view,success,/dashboard
+2026-11-20 13:30:45,91.203.12.78,guest,XSS attempt,blocked,"/contact?name=<script>eval(String.fromCharCode(97,108,101,114,116))</script>"
+2026-11-20 14:05:10,192.168.1.30,frank,page_view,success,/dashboard
+2026-11-20 14:30:25,192.168.1.30,frank,logout,success,/logout
+2026-11-20 15:00:01,10.0.0.45,charlie,page_view,success,/dashboard
+2026-11-20 15:20:19,10.0.0.45,charlie,download,success,/files/summary.pdf
+2026-11-20 16:00:12,192.168.1.10,alice,login,success,/login
+2026-11-20 16:15:45,192.168.1.10,alice,api_query,success,/api/v1/alerts
+2026-11-20 17:00:00,10.0.0.88,grace,logout,success,/logout
+2026-11-20 17:15:22,172.16.0.23,anonymous,unusual_probe,blocked,/administrator/index.php
+2026-11-20 17:16:00,172.16.0.23,anonymous,unusual_probe,blocked,/cpanel
+2026-11-20 18:00:10,192.168.1.10,alice,logout,success,/logout
+2026-11-20 18:30:44,185.220.101.33,unknown,path_traversal,blocked,/export?template=../../../../../../etc/shadow
+2026-11-20 19:00:05,10.0.0.99,auditor,login,success,/login
+2026-11-20 19:10:20,10.0.0.99,auditor,page_view,success,/dashboard
+2026-11-20 19:14:35,192.168.1.105,admin,login,failed,/login
+2026-11-20 19:14:40,192.168.1.105,admin,login,failed,/login
+2026-11-20 19:14:45,192.168.1.105,admin,login,failed,/login
+2026-11-20 19:14:50,192.168.1.105,admin,login,failed,/login
+2026-11-20 19:14:55,192.168.1.105,admin,login,failed,/login
+2026-11-20 20:00:01,10.0.0.99,auditor,logout,success,/logout
+2026-11-20 20:30:15,103.21.45.67,unknown,SQL Injection attempt,blocked,"/search?id=1' AND (SELECT 1 FROM (SELECT COUNT(*),concat(version(),floor(rand(0)*2))x FROM information_schema.tables GROUP BY x)a)--"
+2026-11-20 21:00:12,192.168.1.44,night_admin,login,success,/login
+2026-11-20 21:05:30,192.168.1.44,night_admin,page_view,success,/dashboard
+2026-11-20 22:00:00,192.168.1.44,night_admin,api_query,success,/api/v1/health
+2026-11-20 23:00:15,192.168.1.44,night_admin,logout,success,/logout
